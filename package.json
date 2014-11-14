@@ -1,7 +1,7 @@
 {
   "name": "hubot-ikr",
   "version": "0.0.1",
-  "description": "Hubot script that likes the same stuff you do",
+  "description": "The stuff you like, Hubot likes them too",
   "main": "index.coffee",
   "author": "Dave Josephsen <dave@skeptech.org> (https://github.com/djosephsen)",
   "keywords": [
@@ -9,17 +9,13 @@
     "hubot-scripts"
   ],
   "license": "MIT",
-  "scripts": {
-    "test": "script/test",
-    "start": "coffee ./test/server.coffee"
-  },
-  "homepage": "https://github.com/hubot-scripts/hubot-business-cat/",
+  "homepage": "https://github.com/djosephsen/hubot-ikr",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hubot-scripts/hubot-business-cat.git"
+    "url": "https://github.com/djosephsen/hubot-ikr"
   },
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-business-cat/issues"
+    "url": "https://github.com/djosephsen/hubot-ikr/issues"
   },
   "dependencies": {
     "coffee-script": "1.8.x"
