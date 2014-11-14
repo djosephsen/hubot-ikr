@@ -8,15 +8,27 @@ responds by validating the shit out of them.
 
 ## Installation
 
-I'm working on getting this npm'd. Once I'm done, you'll be able to: 
-
 Run the following command to install this module as a Hubot dependency
 
 ```
 $ npm install hubot-ikr --save
 ```
 
-Add **hubot-ikr** to your `external-scripts.json` (you may need to create this file).
+Add **hubot-ikr** to your hubot's `package.json` and `external-scripts.json` (you may need to create this file).
+
+In package.json it looks like this: 
 ```
-  ["hubot-ikr"]
+"dependencies": { 
+"stuff",
+"hubot-ikr": "0.0.1",
+"other stuff"
+}
+```
+In external-scripts.json it looks like this: 
+```
+  [
+  "stuff",
+  "hubot-ikr",
+  "other stuff"
+  ]
 ```
