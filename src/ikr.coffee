@@ -35,6 +35,7 @@ replies = [
   "#legit",
   "/me nodds emphatically in agreement",
   "for REALZ though",
+  "FOR REALSIES",
   "it's like you *literally* just read my mind right now",
   "http://www.gifbin.com/bin/1237811519_chuck-norris-approves.gif"
 ]
