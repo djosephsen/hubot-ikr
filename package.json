@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "The stuff you like, Hubot likes them too",
   "main": "index.coffee",
-  "author": "Dave Josephsen <dave@skeptech.org> (https://github.com/djosephsen)",
+  "author": {
+  "name": "Dave Josephsen",
+  "email": "dave@skeptech.org"
+  },
   "keywords": [
     "hubot",
     "hubot-scripts"
@@ -17,8 +20,9 @@
   "bugs": {
     "url": "https://github.com/djosephsen/hubot-ikr/issues"
   },
-  "dependencies": {
-    "coffee-script": "1.8.x"
+  "dependencies": {},
+    "peerDependencies": {
+      "hubot": "2.x"
   },
   "devDependencies": {
     "mocha": "1.21.x",
