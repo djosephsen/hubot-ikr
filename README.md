@@ -6,15 +6,17 @@ responds by validating the shit out of them.
 
 ![IKNOWRIGHT?!](usage_example.png)
 
-//## Installation
+## Installation
 
-//Run the following command to install this module as a Hubot dependency
+I'm working on getting this npm'd. Once I'm done, you'll be able to: 
 
-//```
-//$ npm install hubot-ikr --save
-//```
+Run the following command to install this module as a Hubot dependency
 
-//Add **hubot-ikr** to your `external-scripts.json` (you may need to create this file).
-//```
-//  ["hubot-ikr"]
-//```
+```
+$ npm install hubot-ikr --save
+```
+
+Add **hubot-ikr** to your `external-scripts.json` (you may need to create this file).
+```
+  ["hubot-ikr"]
+```
