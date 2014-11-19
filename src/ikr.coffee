@@ -48,7 +48,7 @@ triggers = [
   "I love",
   "(fantastic|wonderful|outstanding|magnificent|brilliant|genius|amazing)",
   "(ZOMG|OMG|OMFG)",
-  "A+",
+  "A\+",
   "(so|pretty) great",
   "off the hook"
 ]
