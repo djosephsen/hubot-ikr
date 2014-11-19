@@ -1,6 +1,6 @@
 {
   "name": "hubot-ikr",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The stuff you like, Hubot likes them too",
   "main": "index.coffee",
   "author": {
