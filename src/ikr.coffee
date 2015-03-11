@@ -46,12 +46,12 @@ triggers = [
   "awesome",
   "I love",
   "(excellent|fantastic|wonderful|outstanding|magnificent|brilliant|genius|amazing)",
-  "/(ZOMG|OMG|OMFG)/i",
+  "(ZOMG|OMG|OMFG)",
   "(so|pretty) great",
   "off the hook"
 ]
 
-regex = new RegExp triggers.join('|')
+regex = new RegExp triggers.join('|'), "i"
 
 module.exports = (robot) ->
   robot.hear regex, (msg) ->
