@@ -37,6 +37,7 @@ replies = [
   "for REALZ though",
   "FOR REALSIES",
   "it's like you *literally* just read my mind right now",
+  "Wow, you guys, I'm stunned",
 ]
 
 triggers = [
