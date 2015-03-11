@@ -45,8 +45,8 @@ triggers = [
   "they have the best",
   "awesome",
   "I love",
-  "(fantastic|wonderful|outstanding|magnificent|brilliant|genius|amazing)",
-  "(ZOMG|OMG|OMFG)",
+  "(excellent|fantastic|wonderful|outstanding|magnificent|brilliant|genius|amazing)",
+  "/(ZOMG|OMG|OMFG)/i",
   "(so|pretty) great",
   "off the hook"
 ]
