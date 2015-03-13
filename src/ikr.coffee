@@ -66,5 +66,6 @@ module.exports = (robot) ->
     msg.send msg.random replies
 
   robot.hear special_users_regex, (msg) ->
+    msg.send msg.random replies
     if (msg.message.user.name.search special_users_regex) >= 0
       msg.send msg.random replies
