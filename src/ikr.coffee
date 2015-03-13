@@ -22,6 +22,7 @@ replies = [
   "*OMG* couldn't agree more",
   ":+1:",
   "+1",
+  "+1 and a half",
   ":arrow_up: THAT",
   ":arrow_up: you complete me :arrow_up:",
   "so true",
@@ -48,6 +49,7 @@ triggers = [
   "I love",
   "(excellent|fantastic|wonderful|outstanding|magnificent|brilliant|genius|amazing)",
   "(ZOMG|OMG|OMFG)",
+  "\+1",
   "(so|pretty) great",
   "off the hook"
 ]
