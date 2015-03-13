@@ -49,7 +49,7 @@ triggers = [
   "I love",
   "(excellent|fantastic|wonderful|outstanding|magnificent|brilliant|genius|amazing)",
   "(ZOMG|OMG|OMFG)",
-  "\+1",
+  "\\+1",
   "(so|pretty) great",
   "off the hook"
 ]
