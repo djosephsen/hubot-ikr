@@ -62,15 +62,11 @@ special_users_regex = new RegExp special_users.join('|'), "i"
 special_triggers_regex = new RegExp special_triggers.join('|'), "i"
 
 module.exports = (robot) ->
-  robot.hear special_users_regex, (msg) ->
-    msg.send special_users[0]
-    msg.send special_triggers[0]
+  robot.hear special_triggers_regex, (msg) ->
     msg.send msg.random replies
     if (msg.message.user.name.search special_users_regex) >= 0
       msg.send msg.random replies
 
   robot.hear regex, (msg) ->
-    msg.send special_users[0]
-    msg.send special_triggers[0]
     msg.send msg.random replies
 
