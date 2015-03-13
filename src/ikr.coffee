@@ -54,8 +54,8 @@ triggers = [
   "off the hook"
 ]
 
-special_users = process.env.IKR_SPECIAL_USERS || ["ctn"]
-special_triggers = process.env.IKR_SPECIAL_TRIGGERS || ["(special|cool|incredible|incroyable)"]
+special_users = process.env.HUBOT_IKR_SPECIAL_USERS || ["ctn"]
+special_triggers = process.env.HUBOT_IKR_SPECIAL_TRIGGERS || ["(special|cool|incredible|incroyable)"]
 
 regex = new RegExp triggers.join('|'), "i"
 special_users_regex = new RegExp special_users.join('|'), "i"
