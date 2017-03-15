@@ -72,7 +72,6 @@ special_triggers_regex = new RegExp special_triggers, "i"
 agreeability_max = 100
 agreeability_min = 10 # because if smaller why bother?
 agreeability_step = 10
-agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
 
 setAgreeability = (robot, input) ->
   setting = Math.min(input, agreeability_max)
@@ -87,6 +86,7 @@ module.exports = (robot) ->
       msg.send msg.random replies
 
   robot.respond /agreeability?/i, (msg) ->
+    agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
     msg.reply "Current agreeability setting is " + agreeability
 
   robot.respond /set agreeability to (.*)/i, (msg) ->
@@ -97,10 +97,12 @@ module.exports = (robot) ->
       msg.reply "I'm afraid I can't do that."
 
   robot.hear /be more agreeable/i, (msg) ->
+    agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
     agreeability_current = setAgreeability robot, agreeability_current + agreeability_step
     msg.reply "Agreeability set to " + agreeability_current
 
   robot.hear /be less agreeable/i, (msg) ->
+    agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
     agreeability_current = setAgreeability robot, agreeability current - agreeability_step
     msg.reply "Agreeability set to " + agreeability_current
 
