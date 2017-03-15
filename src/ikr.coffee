@@ -90,8 +90,9 @@ module.exports = (robot) ->
     msg.reply "Current agreeability setting is " + agreeability_current
 
   robot.respond /set agreeability to (.*)/i, (msg) ->
-    robot.logger.error msg.match[1]
-    if (Number.isInteger(msg.match[1]))
+    robot.logger.error typeof msg.match[1]
+    robot.logger.error parseInt(msg.match[1],10)
+    if (Number.isInteger(parseInt(msg.match[1])))
       agreeability_current = setAgreeability(robot, msg.match[1])
       msg.reply "Current aggreability setting set to " + agreeability_current
     else
