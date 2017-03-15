@@ -74,12 +74,11 @@ agreeability_min = 10 # because if smaller why bother?
 agreeability_step = 10
 agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
 
-function setAgreeability (input) {
+setAgreeability = (input) ->
   setting = Math.min(input, agreeability_max)
   setting = Math.max(setting, agreeability_min)
   robot.brain.set 'hubot_ikr_agreeability', setting
   return setting
-}
 
 
 module.exports = (robot) ->
