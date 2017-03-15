@@ -90,8 +90,6 @@ module.exports = (robot) ->
     msg.reply "Current agreeability setting is " + agreeability_current
 
   robot.respond /set agreeability to (.*)/i, (msg) ->
-    robot.logger.error typeof msg.match[1]
-    robot.logger.error parseInt(msg.match[1],10)
     if (Number.isInteger(parseInt(msg.match[1])))
       agreeability_current = setAgreeability(robot, msg.match[1])
       msg.reply "Current aggreability setting set to " + agreeability_current
@@ -109,6 +107,9 @@ module.exports = (robot) ->
     msg.reply "Agreeability set to " + agreeability_current
 
   robot.hear regex, (msg) ->
-    if (Math.floor(Math.random() * 100) < agreeability_current)
+    agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
+    random_value = Math.floor(Math.random() * 100)
+    robot.logger.error random_value
+    if (random_value < agreeability_current)
       msg.send msg.random replies
 
