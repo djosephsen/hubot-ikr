@@ -74,7 +74,7 @@ agreeability_min = 10 # because if smaller why bother?
 agreeability_step = 10
 agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
 
-setAgreeability = (input) ->
+setAgreeability = (robot, input) ->
   setting = Math.min(input, agreeability_max)
   setting = Math.max(setting, agreeability_min)
   robot.brain.set 'hubot_ikr_agreeability', setting
@@ -91,17 +91,17 @@ module.exports = (robot) ->
 
   robot.respond /set agreeability to (.*)/i, (msg) ->
     if (Number.isInteger(msg.match[1]))
-      agreeability_current = setAgreeability(msg.match[1])
+      agreeability_current = setAgreeability(robot, msg.match[1])
       msg.reply "Current aggreability setting set to " + agreeability_current 
     else
       msg.reply "I'm afraid I can't do that."
 
   robot.hear /be more agreeable/i, (msg) ->
-    agreeability_current = setAgreeability (agreeability_current + agreeability_step)
+    agreeability_current = setAgreeability (robot, agreeability_current + agreeability_step)
     msg.reply "Agreeability set to " + agreeability_current
 
   robot.hear /be less agreeable/i, (msg) ->
-    agreeability_current = setAgreeability (agreeability current - agreeability_step)
+    agreeability_current = setAgreeability (robot, agreeability current - agreeability_step)
     msg.reply "Agreeability set to " + agreeability_current
 
   robot.hear regex, (msg) ->
