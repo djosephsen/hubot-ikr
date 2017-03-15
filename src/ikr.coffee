@@ -67,7 +67,7 @@ regex = new RegExp triggers.join('|'), "i"
 special_users_regex = new RegExp special_users, "i"
 special_triggers_regex = new RegExp special_triggers, "i"
 
-# agreeability setting based on TARS honesty setting from the movie Interstellar, 
+# agreeability setting based on TARS honesty setting from the movie Interstellar,
 # expressed as a percentage
 agreeability_max = 100
 agreeability_min = 10 # because if smaller why bother?
@@ -92,16 +92,16 @@ module.exports = (robot) ->
   robot.respond /set agreeability to (.*)/i, (msg) ->
     if (Number.isInteger(msg.match[1]))
       agreeability_current = setAgreeability(robot, msg.match[1])
-      msg.reply "Current aggreability setting set to " + agreeability_current 
+      msg.reply "Current aggreability setting set to " + agreeability_current
     else
       msg.reply "I'm afraid I can't do that."
 
   robot.hear /be more agreeable/i, (msg) ->
-    agreeability_current = setAgreeability (robot, agreeability_current + agreeability_step)
+    agreeability_current = setAgreeability robot, agreeability_current + agreeability_step
     msg.reply "Agreeability set to " + agreeability_current
 
   robot.hear /be less agreeable/i, (msg) ->
-    agreeability_current = setAgreeability (robot, agreeability current - agreeability_step)
+    agreeability_current = setAgreeability robot, agreeability current - agreeability_step
     msg.reply "Agreeability set to " + agreeability_current
 
   robot.hear regex, (msg) ->
