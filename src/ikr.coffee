@@ -39,6 +39,12 @@ replies = [
   "FOR REALSIES",
   "it's like you *literally* just read my mind right now",
   "Wow, you guys, I'm stunned",
+  "http://www.gifbin.com/bin/1237811519_chuck-norris-approves.gif",
+  "https://m.popkey.co/737465/w6yRN.gif",
+  "http://24.media.tumblr.com/tumblr_lyvq47DWd81rn95k2o1_500.gif",
+  "http://25.media.tumblr.com/tumblr_m09plvItq51rqfhi2o1_400.gif",
+  "http://memeguy.com/photos/images/when-i-tell-a-classmate-i-barley-reached-page-minimum-and-he-says-he-had-trouble-keeping-it-under--71761.gif",
+  "http://i.imgur.com/H34pBqF.gif"
 ]
 
 triggers = [
@@ -61,11 +67,45 @@ regex = new RegExp triggers.join('|'), "i"
 special_users_regex = new RegExp special_users, "i"
 special_triggers_regex = new RegExp special_triggers, "i"
 
+# agreeability setting based on TARS honesty setting from the movie Interstellar, 
+# expressed as a percentage
+agreeability_max = 100
+agreeability_min = 10 # because if smaller why bother?
+agreeability_step = 10
+agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
+
+function setAgreeability (input) {
+  setting = Math.min(input, agreeability_max)
+  setting = Math.max(setting, agreeability_min)
+  robot.brain.set 'hubot_ikr_agreeability', setting
+  return setting
+}
+
+
 module.exports = (robot) ->
   robot.hear special_triggers_regex, (msg) ->
     if (msg.message.user.name.search special_users_regex) >= 0
       msg.send msg.random replies
 
+  robot.respond /agreeability?/i, (msg) ->
+    msg.reply "Current agreeability setting is " + agreeability
+
+  robot.respond /set agreeability to (.*)/i, (msg) ->
+    if (Number.isInteger(msg.match[1]))
+      agreeability_current = setAgreeability(msg.match[1])
+      msg.reply "Current aggreability setting set to " + agreeability_current 
+    else
+      msg.reply "I'm afraid I can't do that."
+
+  robot.hear /be more agreeable/i, (msg) ->
+    agreeability_current = setAgreeability (agreeability_current + agreeability_step)
+    msg.reply "Agreeability set to " + agreeability_current
+
+  robot.hear /be less agreeable/i, (msg) ->
+    agreeability_current = setAgreeability (agreeability current - agreeability_step)
+    msg.reply "Agreeability set to " + agreeability_current
+
   robot.hear regex, (msg) ->
-    msg.send msg.random replies
+    if (Math.floor(Math.random() * 100) < agreeability_current)
+      msg.send msg.random replies
 
