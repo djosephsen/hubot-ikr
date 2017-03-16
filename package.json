@@ -1,12 +1,20 @@
 {
   "name": "hubot-ikr",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The stuff you like, Hubot likes them too",
   "main": "index.coffee",
   "author": {
   "name": "Dave Josephsen",
   "email": "dave@skeptech.org"
   },
+  "contributors": [{
+    "name": "ctn",
+    "url": "https://github.com/ctn"
+  },{
+    "name": "David McGrath",
+    "email": "dave.mcgrath3@gmail.com",
+    "url": "https://github.com/davemcg3"
+  }],
   "keywords": [
     "hubot",
     "hubot-scripts"

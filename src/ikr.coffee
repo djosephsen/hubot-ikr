@@ -9,6 +9,10 @@
 #
 # Commands:
 #   enthusiastic adverbs trigger random agreements
+#   be more agreeable
+#   be less agreeable
+#   set agreeability to ##
+#   agreeability?
 #
 # Notes
 #   See jargon array for list of trigger phrases
@@ -18,7 +22,7 @@
 #
 # Contributors:
 #   ctn (https://github.com/ctn)
-#   David McGrath <dave.mcgrath3@gmail.com>
+#   David McGrath <dave.mcgrath3@gmail.com> (https://github.com/davemcg3)
 #
 
 
