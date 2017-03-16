@@ -97,7 +97,7 @@ module.exports = (robot) ->
   robot.hear /set agreeability to (\d{1,3})(.*)/i, (msg) ->
     if Number.isInteger parseInt msg.match[1]
       agreeability_current = setAgreeability(robot, parseInt msg.match[1])
-      msg.reply "Current agreeability setting set to " + agreeability_current + "%\n" + msg.random replies
+      msg.reply "Okay, I'll agree with you " + agreeability_current + "% of the time.\n" + msg.random replies
     else
       msg.reply "I'm afraid I can't do that."
 
