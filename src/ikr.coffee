@@ -109,7 +109,7 @@ module.exports = (robot) ->
   robot.hear /be less agreeable/i, (msg) ->
     agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
     agreeability_current = setAgreeability robot, agreeability_current - agreeability_step
-    msg.reply "Aww... but I can agree to that.  ;-)"
+    msg.reply "Aww... but I can agree to that.  :wink:"
 
   robot.hear regex, (msg) ->
     agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
