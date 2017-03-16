@@ -94,13 +94,12 @@ module.exports = (robot) ->
     agreeability_current = robot.brain.get('hubot_ikr_agreeability') || 100
     msg.reply "Current agreeability setting is " + agreeability_current
 
-  robot.hear /set agreeability to (.*)/i, (msg) ->
+  robot.hear /set agreeability to (\d{1,3})(.*)/i, (msg) ->
+    robot.logger.error msg.match[1]
+    robot.logger.error msg.match[2]
     if Number.isInteger parseInt msg.match[1]
-      robot.logger.error msg.match[1]
-      robot.logger.error parseInt msg.match[1]
-      robot.logger.error Number.isInteger parseInt msg.match[1]
-      agreeability_current = setAgreeability(robot, msg.match[1])
-      msg.reply "Current agreeability setting set to " + agreeability_current + "%"
+      agreeability_current = setAgreeability(robot, parseInt msg.match[1])
+      msg.reply "Current agreeability setting set to " + agreeability_current + "%\n" + msg.random replies
     else
       msg.reply "I'm afraid I can't do that."
 
