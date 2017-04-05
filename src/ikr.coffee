@@ -65,8 +65,9 @@ triggers = [
   "(excellent|fantastic|wonderful|outstanding|magnificent|brilliant|genius|amazing)",
   "(ZOMG|OMG|OMFG)",
   "\\+1",
-  "(so|pretty) great",
-  "off the hook"
+  "(so |pretty )*great",
+  "off the hook",
+  "yay"
 ]
 
 special_users = process.env.HUBOT_IKR_SPECIAL_USERS || "ctn"
