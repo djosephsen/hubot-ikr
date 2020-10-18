@@ -1,6 +1,6 @@
 {
   "name": "hubot-ikr",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "The stuff you like, Hubot likes them too",
   "main": "index.coffee",
   "author": {
@@ -30,7 +30,7 @@
   },
   "dependencies": {},
     "peerDependencies": {
-      "hubot": "2.x"
+      "hubot": "3.x"
   },
   "devDependencies": {
     "mocha": "1.21.x",
